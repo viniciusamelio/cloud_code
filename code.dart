@@ -10,5 +10,5 @@ String getpokemon() {
     "groudon",
     "moltres",
   ];
-  return pokemonList[index];
+  return pokemonList[3];
 }
