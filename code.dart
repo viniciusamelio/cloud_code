@@ -1,3 +1,21 @@
-String hello() {
-  return "Hello from Github, OTA Changes!!";
+import 'dart:math';
+import 'package:dio/dio.dart';
+
+Future<String> getPokemon() async {
+  final pokemonList = [
+    "ditto",
+    "pikachu",
+    "bulbasaur",
+    "charmander",
+    "psyduck",
+    "mew",
+    "tepig",
+    "groudon",
+    "moltres",
+  ];
+  final index = Random().nextInt(8);
+  final result = await Dio()
+      .get("https://pokeapi.co/api/v2/pokemon/${pokemonList[index]}");
+  final data = result.data;
+  return "${data['name']} - ${data['id']}";
 }
