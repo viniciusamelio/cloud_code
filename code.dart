@@ -1,8 +1,6 @@
-import 'dart:math';
 
-import 'package:dio/dio.dart';
 
-Future<String> getPokemon() async {
+String getPokemon() {
   final pokemonList = [
     "ditto",
     "pikachu",
@@ -14,9 +12,5 @@ Future<String> getPokemon() async {
     "groudon",
     "moltres",
   ];
-  final index = Random().nextInt(8);
-  final result = await Dio()
-      .get("https://pokeapi.co/api/v2/pokemon/${pokemonList[index]}");
-  final data = result.data;
-  return "${data['name']} - ${data['id']}";
+  return pokemonList[index];
 }
