@@ -1,6 +1,4 @@
-
-
-String getPokemon() {
+String getpokemon() {
   final pokemonList = [
     "ditto",
     "pikachu",
